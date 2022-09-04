@@ -1,17 +1,16 @@
 ﻿using System.Runtime.CompilerServices;
-
-
 namespace BT1
 {
-    
     public class AdjacencyMatrix
     {
-        public int[,]? a;
-        public int n;
+        public int n = 0; // so dinh
+        public int[,]? a = new int[0,0];
+        public bool Undirect; //Mo ta vo huong true; co huong: false
+       
 
-        public void ReadAdjacencyMatrix(string filename)
+        public void readAdjacencyMatrix(string pathInput)
         {
-            StreamReader file = new StreamReader("/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT1/BT1/Input.txt");
+            StreamReader file = new StreamReader(pathInput);
             string input = file.ReadToEnd();
             Console.WriteLine(input);
             string[] result = input.Split("\n");
@@ -29,14 +28,15 @@ namespace BT1
                     string[] line = result[i].Split(" ");
                     for (int j = 0; j < line.Length; j++)
                     {
-                        this.a[i - 1, j] = int.Parse(line[j]);
+                        this.a [i - 1, j] = int.Parse(line[j]);
                     }
                 }
             }
         }
         public void showAdjacencyMatrix()
         {
-            Console.WriteLine(n);
+            //begin
+            Console.WriteLine($"Số Đỉnh đồ thị: {n}");
 
             for (int i = 0; i < this.a.GetLength(0); i++)
             {
@@ -53,43 +53,34 @@ namespace BT1
                     }
                 }
             }
+            
+            this.Undirect = CheckGraph.IsUndirectedGraph(this);
+            //Check tinh co huong 
+            if (this.Undirect == true)
+            {
+                Console.WriteLine("Đồ Thị Vô Hướng");
+            }
+            else
+            {
+                Console.WriteLine("Đồ Thị có Hướng");
+            }
+            //Tong so canh
+            Console.WriteLine($"Tổng số cạnh đồ thị: {CheckGraph.CountConnect(this)}");
+            //Số cặp cạnh bôi
+            Console.WriteLine($"Tổng số cặp cạnh bội: {CheckGraph.CountDoubleConnect(this)}");
+            Console.WriteLine($"Tổng số cạnh khuyên: {CheckGraph.countloopsGraph(this)}");
+            Console.WriteLine($"Tổng số đỉnh treo: {CheckGraph.CountPendant(this)}");
         }
     }
     internal static class Program
     {
         
-        public static bool IsUndirectedGraph(AdjacencyMatrix g)//Kiem tra do thi co huong
-        {
-            int i, j;
-            bool isSymmetric = true;
-            for (i = 0; i < g.n && isSymmetric; ++i)
-            {
-                for (j = i + 1; (j < g.n) && (g.a[i, j] == g.a[j, i]); ++j)
-                {
-                    if (j < g.n)
-                        isSymmetric = false;
-                }
-            }
-            return isSymmetric;
-        }
-        
-        
         private static void Main(string[] args)
         { 
+            string pathInputTxt = "/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT1/BT1/Input.txt";
             AdjacencyMatrix g = new AdjacencyMatrix(); 
-            g.ReadAdjacencyMatrix("input.txt"); 
+            g.readAdjacencyMatrix(pathInputTxt); 
             g.showAdjacencyMatrix();
-
-            bool isVoHuong = IsUndirectedGraph(g);
-            if (isVoHuong == true)
-            {
-                Console.WriteLine("Đồ Thị Vô Hướng");
-            }
-            
-            else
-            {
-                Console.WriteLine("Đồ Thị có Hướng");
-            }
         }
     }
 }
