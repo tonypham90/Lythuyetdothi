@@ -10,7 +10,7 @@ public class AdjacencyMatrix
     
 
 
-    public void readAdjacencyMatrix(string pathInput)
+    public void readAdjacencyMatrix(string? pathInput)
     {
         var file = new StreamReader(pathInput);
         var input = file.ReadToEnd();
@@ -63,12 +63,12 @@ public class AdjacencyMatrix
         //begin
         Console.WriteLine($"Số Đỉnh đồ thị: {n}");
 
-        for (var i = 0; i < a.GetLength(0); i++)
-        for (var j = 0; j < a.GetLength(1); j++)
-            if (j == a.GetLength(1) - 1)
-                Console.WriteLine($"{a[i, j]} ");
-            else
-                Console.Write($"{a[i, j]} ");
+        // for (var i = 0; i < a.GetLength(0); i++)
+        // for (var j = 0; j < a.GetLength(1); j++)
+        //     if (j == a.GetLength(1) - 1)
+        //         Console.WriteLine($"{a[i, j]} ");
+        //     else
+        //         Console.Write($"{a[i, j]} ");
 
         Undirect = CheckGraph.IsUndirectedGraph(this);
         // Bac
@@ -84,6 +84,7 @@ public class AdjacencyMatrix
         Console.WriteLine($"Tổng số cặp cạnh bội: {CheckGraph.CountDoubleConnect(this)}");
         Console.WriteLine($"Tổng số cạnh khuyên: {CheckGraph.countloopsGraph(this)}");
         Console.WriteLine($"Tổng số đỉnh treo: {CheckGraph.CountPendant(this)}");
+        //in so bac moi dinh
         switch (this.Undirect)
         {
             case true:
@@ -101,7 +102,34 @@ public class AdjacencyMatrix
                 }
                 break;
         }
+        //loai do thi:
+        string firsttext,Secondtext;
         
+        switch (this.Undirect)
+        {
+            case true:
+                Secondtext = "Vô Hướng";
+                break;
+            case false:
+                Secondtext = "Có Hướng";
+                break;
+        }
+        if (CheckGraph.CountDoubleConnect(this)>0)
+        {
+            if (CheckGraph.countloopsGraph(this)>0)
+            { 
+                firsttext = "Giả Đồ Thị";
+            }
+            else
+            {
+                firsttext = "Đa Đồ Thị";
+            }
+        }
+        else
+        {
+            firsttext = "Đơn Đồ Thị";
+        }
+        Console.WriteLine($"\n{firsttext} {Secondtext}");
     }
 }
 
@@ -109,7 +137,15 @@ internal static class Program
 {
     private static void Main(string[] args)
     {
-        string pathInputTxt = "/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT1/BT1/Input.txt";//Duong dan den file input
+        Console.WriteLine("Nhập đường dẫn tuyệt đối kèm tên file input vd:'/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT1/BT1/Input.txt'\nĐường dẫn:");
+        string? path = Console.ReadLine();
+        while (string.IsNullOrEmpty(path))
+        {
+            Console.WriteLine("Nhập đường dẫn tuyệt đối kèm tên file input vd:'/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT1/BT1/Input.txt'\nNhập lại Đường dẫn:");
+            path = Console.ReadLine();
+        }
+        string? pathInputTxt = path;//Duong dan den file input
+        
         AdjacencyMatrix g = new AdjacencyMatrix();
         g.readAdjacencyMatrix(pathInputTxt);
         g.showAdjacencyMatrix();
