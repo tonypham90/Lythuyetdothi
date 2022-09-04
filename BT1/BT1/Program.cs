@@ -1,86 +1,117 @@
-﻿using System.Runtime.CompilerServices;
-namespace BT1
+﻿namespace BT1;
+
+public class AdjacencyMatrix
 {
-    public class AdjacencyMatrix
+    public int[,]? a = new int[0, 0];
+    public int n; // so dinh
+    public bool Undirect; //Mo ta vo huong true; co huong: false
+    public int[] Degrees;
+    public int[] DegreesOut;
+    
+
+
+    public void readAdjacencyMatrix(string pathInput)
     {
-        public int n = 0; // so dinh
-        public int[,]? a = new int[0,0];
-        public bool Undirect; //Mo ta vo huong true; co huong: false
-       
-
-        public void readAdjacencyMatrix(string pathInput)
-        {
-            StreamReader file = new StreamReader(pathInput);
-            string input = file.ReadToEnd();
-            Console.WriteLine(input);
-            string[] result = input.Split("\n");
-            int n = 0;
-            for (int i = 0; i < result.Length; i++)
+        var file = new StreamReader(pathInput);
+        var input = file.ReadToEnd();
+        Console.WriteLine(input);
+        var result = input.Split("\n");
+        var n = 0;
+        for (var i = 0; i < result.Length; i++)
+            if (i == 0)
             {
-                if (i==0)
-                {
-                    n = int.Parse(result[0]);
-                    this.n = n;
-                    this.a = new int[n, n];
-                }
-                else
-                {
-                    string[] line = result[i].Split(" ");
-                    for (int j = 0; j < line.Length; j++)
-                    {
-                        this.a [i - 1, j] = int.Parse(line[j]);
-                    }
-                }
-            }
-        }
-        public void showAdjacencyMatrix()
-        {
-            //begin
-            Console.WriteLine($"Số Đỉnh đồ thị: {n}");
-
-            for (int i = 0; i < this.a.GetLength(0); i++)
-            {
-                
-                for (int j = 0; j < this.a.GetLength(1); j++)
-                {
-                    if (j==this.a.GetLength(1)-1)
-                    {
-                        Console.WriteLine($"{this.a[i,j]} ");
-                    }
-                    else
-                    {
-                        Console.Write($"{this.a[i,j]} ");
-                    }
-                }
-            }
-            
-            this.Undirect = CheckGraph.IsUndirectedGraph(this);
-            //Check tinh co huong 
-            if (this.Undirect == true)
-            {
-                Console.WriteLine("Đồ Thị Vô Hướng");
+                n = int.Parse(result[0]);
+                this.n = n;
+                a = new int[n, n];
             }
             else
             {
-                Console.WriteLine("Đồ Thị có Hướng");
+                var line = result[i].Split(" ");
+                for (var j = 0; j < line.Length; j++) a[i - 1, j] = int.Parse(line[j]);
             }
-            //Tong so canh
-            Console.WriteLine($"Tổng số cạnh đồ thị: {CheckGraph.CountConnect(this)}");
-            //Số cặp cạnh bôi
-            Console.WriteLine($"Tổng số cặp cạnh bội: {CheckGraph.CountDoubleConnect(this)}");
-            Console.WriteLine($"Tổng số cạnh khuyên: {CheckGraph.countloopsGraph(this)}");
-            Console.WriteLine($"Tổng số đỉnh treo: {CheckGraph.CountPendant(this)}");
-        }
+        countDegrees();
     }
-    internal static class Program
+    public void countDegrees()
     {
-        
-        private static void Main(string[] args)
-        { 
-            string pathInputTxt = "/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT1/BT1/Input.txt";
-            AdjacencyMatrix g = new AdjacencyMatrix(); 
-            g.readAdjacencyMatrix(pathInputTxt); 
-            g.showAdjacencyMatrix();
+        int[] degrees = new int[this.n]; // Mảng chứa bậc của các đỉnh
+        int[] degreesOuts = new int[this.n];
+        for (int i = 0; i < this.n; i++)
+        {
+            degreesOuts[i] = 0;
         }
+        for (int i = 0; i < this.n; i++)
+        {
+            int count = 0;
+            for (int j = 0; j < this.n; j++)
+                if (this.a[i, j] != 0)
+                {
+                    count += this.a[i, j];
+                    degreesOuts[j] += this.a[i, j];
+                    if (i == j && this.Undirect) // xet truong hop canh khuyen
+                        count += this.a[i, i];
+                }
+
+            degrees[i] = count;
+        }
+
+        this.Degrees = degrees;
+        this.DegreesOut = degreesOuts;
+    }
+
+    public void showAdjacencyMatrix()
+    {
+        //begin
+        Console.WriteLine($"Số Đỉnh đồ thị: {n}");
+
+        for (var i = 0; i < a.GetLength(0); i++)
+        for (var j = 0; j < a.GetLength(1); j++)
+            if (j == a.GetLength(1) - 1)
+                Console.WriteLine($"{a[i, j]} ");
+            else
+                Console.Write($"{a[i, j]} ");
+
+        Undirect = CheckGraph.IsUndirectedGraph(this);
+        // Bac
+        // this.Degrees = CheckGraph.countDegrees(this);
+        //Check tinh co huong 
+        if (Undirect)
+            Console.WriteLine("Đồ Thị Vô Hướng");
+        else
+            Console.WriteLine("Đồ Thị có Hướng");
+        //Tong so canh
+        Console.WriteLine($"Tổng số cạnh đồ thị: {CheckGraph.CountConnect(this)}");
+        //Số cặp cạnh bôi
+        Console.WriteLine($"Tổng số cặp cạnh bội: {CheckGraph.CountDoubleConnect(this)}");
+        Console.WriteLine($"Tổng số cạnh khuyên: {CheckGraph.countloopsGraph(this)}");
+        Console.WriteLine($"Tổng số đỉnh treo: {CheckGraph.CountPendant(this)}");
+        switch (this.Undirect)
+        {
+            case true:
+                Console.WriteLine("Bac tung dinh:");
+                for (int i = 0; i < this.Degrees.Length; i++)
+                {
+                    Console.Write($"{i}({Degrees[i]}) ");
+                }
+                break;
+            case false:
+                Console.WriteLine("(Bac vao - Bac ra)Bac tung dinh:");
+                for (int i = 0; i < this.n; i++)
+                {
+                    Console.Write($"{i}({DegreesOut[i]}-{Degrees[i]}) ");
+                }
+                break;
+        }
+        
+    }
+}
+
+internal static class Program
+{
+    private static void Main(string[] args)
+    {
+        string pathInputTxt = "/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT1/BT1/Input.txt";//Duong dan den file input
+        AdjacencyMatrix g = new AdjacencyMatrix();
+        g.readAdjacencyMatrix(pathInputTxt);
+        g.showAdjacencyMatrix();
     }
 }
