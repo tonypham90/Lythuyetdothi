@@ -1,7 +1,6 @@
-using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace BT2;
-
 public class AdjacencyMatrix
 {
     public int[,]? a = new int[0, 0]; //Ma tran bieu dien do thi
@@ -51,13 +50,15 @@ public class AdjacencyMatrix
 
     public void ConvertMatrixToAdjacencylist()
     {
+        Dictionary<int, int[]> dictionary = new Dictionary<int, int[]>();
+        Adjacency_list = new Dictionary<int, int[]>();
         for (int i = 0; i < n; i++)
         {
             int srow = 0;
             // tinh tong element 1 row
             for (int j = 0; j < n; j++)
             {
-                if (a[i,j] == 1)
+                if (a[i,j] != 0)
                 {
                     srow += 1;
                 }
@@ -69,12 +70,18 @@ public class AdjacencyMatrix
             {
                 if (a[i,j]!=0)
                 {
-                    list[countIndex] = a[i, j];
+                    list[countIndex] = j;
                     countIndex += 1;
                 }
             }
-            Adjacency_list.Add(i, list);
+
+            if (srow !=0)
+            {
+                dictionary.Add(i,list);
+            }
         }
+
+        Adjacency_list = dictionary;
     }
  
     public void IsUndirectedGraph() //kiem tra tinh co huong cua do thi
@@ -93,7 +100,7 @@ public class AdjacencyMatrix
         Undirect = isSymmetric;
     }
 
-    public void countDegrees()
+    public void countDegrees() //Dem dinh
     {
         var degrees = new int[n]; // Mảng chứa bậc của các đỉnh
         var degreesOuts = new int[n];
@@ -193,5 +200,21 @@ public class AdjacencyMatrix
         //     firsttext = "Đơn Đồ Thị";
         // }
         // Console.WriteLine($"\n{firsttext} {Secondtext}");
+        foreach (KeyValuePair<int,int[]> Connect in Adjacency_list)
+        {
+            string TextValue = String.Empty;
+            for (int i = 0; i < Connect.Value.Length; i++)
+            {
+                if (i == 0)
+                {
+                    TextValue = String.Concat(Connect.Value[i]);
+                }
+                else
+                {
+                    TextValue += $" {Connect.Value[i]}";
+                }
+            }
+            Console.WriteLine($"Node: {Connect.Key}, Connect to: {TextValue}");
+        }
     }
 }
