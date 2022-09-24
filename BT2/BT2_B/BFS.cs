@@ -1,47 +1,31 @@
 namespace BT2_B;
 
-// struct Node
-// {
-//     public int Current;
-//     public int Parent;
-//
-//     public int[] stackelement()
-//     {
-//         int[] element = new int[] {
-//             Current, Parent
-//         };
-//         return element;
-//     }
-//
-//     public void GetNode(int currentNode,int parentNode)
-//     {
-//         Current = currentNode;
-//         Parent = parentNode;
-//     }
-// }
 public class BFS
 {
-    private readonly Dictionary<int, int[]> Adjacency_list;
-    private readonly int Goal;
-
-    private readonly int Start;
+    private Dictionary<int, int[]> Adjacency_list;
+    private int Goal;
+    private int Start;
     private bool foundGoal; //tim thay dich
     private Dictionary<int, int> Parentlist;
     private Queue<int[]> queue;
     private List<int> Visited;
 
 
-    public BFS(AdjacencyMatrix g)
+    public void Import(AdjacencyMatrix g)
     {
         Start = g.Start;
         Goal = g.Goal;
         bool foundGoal;
         Adjacency_list = g.Adjacency_list;
         Queue<int[]>? stack = null;
+        
+    }
+
+    public void Run()
+    {
         FindGoal(Start, Goal);
         printResult();
     }
-
     public void FindGoal(int HeadNode, int Goal)
     {
         int currentNode;

@@ -1,50 +1,31 @@
 namespace BT2_A;
-
-// struct Node
-// {
-//     public int Current;
-//     public int Parent;
-//
-//     public int[] stackelement()
-//     {
-//         int[] element = new int[] {
-//             Current, Parent
-//         };
-//         return element;
-//     }
-//
-//     public void GetNode(int currentNode,int parentNode)
-//     {
-//         Current = currentNode;
-//         Parent = parentNode;
-//     }
-// }
 public class DFS
 {
-    private readonly Dictionary<int, int[]> Adjacency_list;
-    private readonly int Goal;
-
-    private readonly int Start;
+    private Dictionary<int, int[]> Adjacency_list;
+    private int Goal;
+    private int Start;
     private bool foundGoal; //tim thay dich
-    private Dictionary<int, int> Parentlist;
-    private Stack<int[]> stack;
-    private List<int> Visited;
+    private Dictionary<int, int>? Parentlist;
+    private Stack<int[]>? stack;
+    private List<int>? Visited;
 
 
-    public DFS(AdjacencyMatrix g)
+    public void Import(AdjacencyMatrix g)
     {
         Start = g.Start;
         Goal = g.Goal;
-        bool foundGoal;
         Adjacency_list = g.Adjacency_list;
-        Stack<int[]>? stack = null;
+    }
+
+    public void Run()
+    {
         FindGoal(Start, Goal);
         printResult();
     }
+    
 
     public void FindGoal(int HeadNode, int Goal)
     {
-        int currentNode;
         Visited = new List<int>();
         stack = new Stack<int[]>();
         Parentlist = new Dictionary<int, int>();
@@ -58,19 +39,13 @@ public class DFS
         {
             elementofStack = stack.Pop();
             //Check goal
-            currentNode = elementofStack[0];
+            var currentNode = elementofStack[0];
 
             if (currentNode != Goal)
             {
                 if (Adjacency_list.ContainsKey(currentNode))
                 {
                     if (Visited.Contains(currentNode))
-                        // if (Parentlist.ContainsKey(currentNode))
-                        // {
-                        //     Parentlist.Remove(currentNode);
-                        // }
-                        //
-                        // Parentlist.Add(currentNode, elementofStack[1]);
                         continue;
 
                     Visited.Add(currentNode);
