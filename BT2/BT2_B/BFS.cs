@@ -21,14 +21,14 @@ namespace BT2_B;
 // }
 public class BFS
 {
+    private readonly Dictionary<int, int[]> Adjacency_list;
+    private readonly int Goal;
 
-    private int Start;
-    private int Goal;
-    private Dictionary<int, int[]> Adjacency_list;
-    private Dictionary<int, int> Parentlist;
-    private List<int> Visited;
-    Queue<int[]> queue;
+    private readonly int Start;
     private bool foundGoal; //tim thay dich
+    private Dictionary<int, int> Parentlist;
+    private Queue<int[]> queue;
+    private List<int> Visited;
 
 
     public BFS(AdjacencyMatrix g)
@@ -38,23 +38,23 @@ public class BFS
         bool foundGoal;
         Adjacency_list = g.Adjacency_list;
         Queue<int[]>? stack = null;
-        FindGoal(Start,Goal);
+        FindGoal(Start, Goal);
         printResult();
-
     }
-    public void FindGoal(int HeadNode,int Goal)
-    { 
+
+    public void FindGoal(int HeadNode, int Goal)
+    {
         int currentNode;
         Visited = new List<int>();
         queue = new Queue<int[]>();
         Parentlist = new Dictionary<int, int>();
         foundGoal = false;
-        int[] elementofStack = new int[2];
+        var elementofStack = new int[2];
         elementofStack[0] = HeadNode;
         elementofStack[1] = HeadNode; //Start is current and parent is same.
         queue.Enqueue(elementofStack);
         // stack.Push(Start);
-        while (!foundGoal&& queue.Count!=0)
+        while (!foundGoal && queue.Count != 0)
         {
             elementofStack = queue.Dequeue();
             //Check goal
@@ -65,7 +65,6 @@ public class BFS
                 if (Adjacency_list.ContainsKey(currentNode))
                 {
                     if (Visited.Contains(currentNode))
-                    {
                         // if (Parentlist.ContainsKey(currentNode))
                         // {
                         //     Parentlist.Remove(currentNode);
@@ -73,20 +72,14 @@ public class BFS
                         //
                         // Parentlist.Add(currentNode, elementofStack[1]);
                         continue;
-                    }
-                    else
-                    {
-                        Visited.Add(currentNode);
-                        if (Parentlist.ContainsKey(currentNode))
-                        {
-                            Parentlist.Remove(currentNode);
-                        }
 
-                        Parentlist.Add(currentNode, elementofStack[1]);
-                    }
+                    Visited.Add(currentNode);
+                    if (Parentlist.ContainsKey(currentNode)) Parentlist.Remove(currentNode);
 
-                    int[] listchild = Adjacency_list[currentNode];
-                    int[] revertlist = Adjacency_list[currentNode];
+                    Parentlist.Add(currentNode, elementofStack[1]);
+
+                    var listchild = Adjacency_list[currentNode];
+                    var revertlist = Adjacency_list[currentNode];
                     // Console.WriteLine("Original list");
                     // for (int i = 0; i < listchild.Length; i++)
                     // {
@@ -101,7 +94,7 @@ public class BFS
                     //     
                     //     Console.Write(listchild[i]+" ");
                     // }
-                    for (int i = 0; i < listchild.Length; i++)
+                    for (var i = 0; i < listchild.Length; i++)
                     {
                         int[] newElement = {
                             listchild[i], currentNode
@@ -112,7 +105,6 @@ public class BFS
                 else
                 {
                     if (Visited.Contains(currentNode))
-                    {
                         // if (Parentlist.ContainsKey(currentNode))
                         // {
                         //     Parentlist.Remove(currentNode);
@@ -120,14 +112,8 @@ public class BFS
                         //
                         // Parentlist.Add(currentNode, elementofStack[1]);
                         continue;
-                    }
-                    else
-                    {
-                        Visited.Add(currentNode);
-                        continue;
-                    }
-                    
-                    
+
+                    Visited.Add(currentNode);
                 }
             }
             else
@@ -138,15 +124,14 @@ public class BFS
                 break;
             }
         }
-        
-        
-        
+
+
         // printResult(int? parrent)
         // {
         //     Parrent = parrent;
         // }
     }
-    
+
 
     private void printResult() //in ket qua duyet tim kiem
     {
@@ -154,10 +139,7 @@ public class BFS
         {
             case true:
                 Console.WriteLine("Danh sách các đỉnh đã duyệt:");
-                for (int i = 0; i < Visited.Count; i++)
-                {
-                    Console.Write($" {Visited[i]}");
-                }
+                for (var i = 0; i < Visited.Count; i++) Console.Write($" {Visited[i]}");
                 Console.WriteLine("\nĐường đi in ngược");
                 printGoaltoStart();
                 break;
@@ -171,20 +153,16 @@ public class BFS
     {
         int Child, Parent;
         Child = Goal;
-        
-        string TextRoad = String.Empty;
+
+        var TextRoad = string.Empty;
         while (Child != Start)
         {
-            Parent = this.Parentlist[Child];
-            string textnode = $"{Parent}";
+            Parent = Parentlist[Child];
+            var textnode = $"{Parent}";
             if (Child == Goal)
-            {
                 TextRoad = $"{Child}<-{Parent}";
-            }
             else
-            {
                 TextRoad = TextRoad + $"<-{textnode}";
-            }
 
             Child = Parent;
             // Parent = this.Parent[Child];
@@ -193,5 +171,3 @@ public class BFS
         Console.WriteLine(TextRoad);
     } // in duong di nguoc tu dich ve dinh
 }
-
-    

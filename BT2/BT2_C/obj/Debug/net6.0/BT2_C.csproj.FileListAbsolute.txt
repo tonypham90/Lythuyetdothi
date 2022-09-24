@@ -1,0 +1,15 @@
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT2/BT2_C/bin/Debug/net6.0/BT2_C
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT2/BT2_C/bin/Debug/net6.0/BT2_C.deps.json
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT2/BT2_C/bin/Debug/net6.0/BT2_C.runtimeconfig.json
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT2/BT2_C/bin/Debug/net6.0/BT2_C.dll
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT2/BT2_C/bin/Debug/net6.0/BT2_C.pdb
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT2/BT2_C/obj/Debug/net6.0/BT2_C.csproj.AssemblyReference.cache
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT2/BT2_C/obj/Debug/net6.0/BT2_C.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT2/BT2_C/obj/Debug/net6.0/BT2_C.AssemblyInfoInputs.cache
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT2/BT2_C/obj/Debug/net6.0/BT2_C.AssemblyInfo.cs
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT2/BT2_C/obj/Debug/net6.0/BT2_C.csproj.CoreCompileInputs.cache
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT2/BT2_C/obj/Debug/net6.0/BT2_C.dll
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT2/BT2_C/obj/Debug/net6.0/refint/BT2_C.dll
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT2/BT2_C/obj/Debug/net6.0/BT2_C.pdb
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT2/BT2_C/obj/Debug/net6.0/BT2_C.genruntimeconfig.cache
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT2/BT2_C/obj/Debug/net6.0/ref/BT2_C.dll

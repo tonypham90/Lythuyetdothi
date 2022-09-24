@@ -1,16 +1,15 @@
-using System.Collections.Generic;
-
 namespace BT2_A;
+
 public class AdjacencyMatrix
 {
     public int[,]? a = new int[0, 0]; //Ma tran bieu dien do thi
+    public Dictionary<int, int[]> Adjacency_list;
     public int[] Degrees; //Bậc hay bậc vào của Đỉnh
     public int[] DegreesOut; // Bậc ra của đỉnh bao gồm 
     public int Goal;
-    public int Start;
     public int n; // so dinh
+    public int Start;
     public bool Undirect; //Mo ta vo huong true; co huong: false
-    public Dictionary<int, int[]> Adjacency_list;
 
     //input du lieu va duong dan
     public void readAdjacencyMatrix(string? pathInput)
@@ -20,81 +19,67 @@ public class AdjacencyMatrix
         // Console.WriteLine(input);
         var result = input.Split("\n");
         for (var i = 0; i < result.Length; i++)
-        {
             if (i == 0)
             {
                 var parse = int.Parse(result[0]);
                 n = parse;
                 a = new int[parse, parse];
             }
-            
+
             else if (i == 1)
             {
-                string[] StartGoal = result[i].Split(" ");
+                var StartGoal = result[i].Split(" ");
                 Start = int.Parse(StartGoal[0]);
                 Goal = int.Parse(StartGoal[1]);
             }
             else
             {
-                string[] line = result[i].Split(" ");
+                var line = result[i].Split(" ");
                 for (var j = 0; j < line.Length; j++) a[i - 2, j] = int.Parse(line[j]);
             }
-        }
 
         IsUndirectedGraph();
         countDegrees();
         ConvertMatrixToAdjacencylist();
     }
-    
+
     //Convert matrix to Adjacency list
 
     public void ConvertMatrixToAdjacencylist()
     {
-        Dictionary<int, int[]> dictionary = new Dictionary<int, int[]>();
+        var dictionary = new Dictionary<int, int[]>();
         Adjacency_list = new Dictionary<int, int[]>();
-        for (int i = 0; i < n; i++)
+        for (var i = 0; i < n; i++)
         {
-            int srow = 0;
+            var srow = 0;
             // tinh tong element 1 row
-            for (int j = 0; j < n; j++)
-            {
-                if (a[i,j] != 0)
-                {
+            for (var j = 0; j < n; j++)
+                if (a[i, j] != 0)
                     srow += 1;
-                }
-            }
-            
-            int[] list = new int[srow];
-            int countIndex = 0;
-            for (int j = 0; j < n; j++)
-            {
-                if (a[i,j]!=0)
+
+            var list = new int[srow];
+            var countIndex = 0;
+            for (var j = 0; j < n; j++)
+                if (a[i, j] != 0)
                 {
                     list[countIndex] = j;
                     countIndex += 1;
                 }
-            }
 
-            if (srow !=0)
-            {
-                dictionary.Add(i,list);
-            }
+            if (srow != 0) dictionary.Add(i, list);
         }
 
         Adjacency_list = dictionary;
     }
- 
+
     public void IsUndirectedGraph() //kiem tra tinh co huong cua do thi
     {
         int i, j;
-        bool isSymmetric = true;
+        var isSymmetric = true;
         for (i = 0; i < n && isSymmetric; ++i)
         {
-            for (j = i + 1; (j < n) && (a[i, j] == a[j, i]); ++j) ;
-            if (j < n)
-            {
-                isSymmetric = false;
-            }
+            for (j = i + 1; j < n && a[i, j] == a[j, i]; ++j) ;
+            if (j < n) isSymmetric = false;
         }
 
         Undirect = isSymmetric;
@@ -124,7 +109,7 @@ public class AdjacencyMatrix
         Degrees = degrees;
         DegreesOut = degreesOuts;
     }
-    
+
     //Show propertive of graph
     public void showAdjacencyMatrix()
     {
@@ -200,20 +185,14 @@ public class AdjacencyMatrix
         //     firsttext = "Đơn Đồ Thị";
         // }
         // Console.WriteLine($"\n{firsttext} {Secondtext}");
-        foreach (KeyValuePair<int,int[]> Connect in Adjacency_list)
+        foreach (var Connect in Adjacency_list)
         {
-            string TextValue = String.Empty;
-            for (int i = 0; i < Connect.Value.Length; i++)
-            {
+            var TextValue = string.Empty;
+            for (var i = 0; i < Connect.Value.Length; i++)
                 if (i == 0)
-                {
-                    TextValue = String.Concat(Connect.Value[i]);
-                }
+                    TextValue = string.Concat(Connect.Value[i]);
                 else
-                {
                     TextValue += $" {Connect.Value[i]}";
-                }
-            }
             Console.WriteLine($"Node: {Connect.Key}, Connect to: {TextValue}");
         }
     }
