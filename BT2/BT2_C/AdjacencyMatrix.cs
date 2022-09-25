@@ -1,4 +1,4 @@
-namespace BT2_B;
+namespace BT2_C;
 
 public class AdjacencyMatrix
 {
@@ -133,67 +133,67 @@ public class AdjacencyMatrix
             Console.WriteLine("Đồ Thị có Hướng");
         Console.WriteLine("Convert matrix to Adjacency list:");
         Console.WriteLine(Adjacency_list);
-    //     //Tong so canh
-    //     // Console.WriteLine($"Tổng số cạnh đồ thị: {CountConnect(this)}");
-    //     // //Số cặp cạnh bôi
-    //     // Console.WriteLine($"Tổng số cặp cạnh bội: {CheckGraph.CountDoubleConnect(this)}");
-    //     // Console.WriteLine($"Tổng số cạnh khuyên: {CheckGraph.countloopsGraph(this)}");
-    //     // Console.WriteLine($"Tổng số đỉnh treo: {CheckGraph.CountPendant(this)}");
-    //     //in so bac moi dinh
-    //     // switch (this.Undirect)
-    //     // {
-    //     //     case true:
-    //     //         Console.WriteLine("Bac tung dinh:");
-    //     //         for (int i = 0; i < this.Degrees.Length; i++)
-    //     //         {
-    //     //             Console.Write($"{i}({Degrees[i]}) ");
-    //     //         }
-    //     //         break;
-    //     //     case false:
-    //     //         Console.WriteLine("(Bac vao - Bac ra)Bac tung dinh:");
-    //     //         for (int i = 0; i < this.n; i++)
-    //     //         {
-    //     //             Console.Write($"{i}({DegreesOut[i]}-{Degrees[i]}) ");
-    //     //         }
-    //     //         break;
-    //     // }
-    //     // //loai do thi:
-    //     // string firsttext,Secondtext;
-    //     //
-    //     // switch (this.Undirect)
-    //     // {
-    //     //     case true:
-    //     //         Secondtext = "Vô Hướng";
-    //     //         break;
-    //     //     case false:
-    //     //         Secondtext = "Có Hướng";
-    //     //         break;
-    //     // }
-    //     // if (CheckGraph.CountDoubleConnect(this)>0)
-    //     // {
-    //     //     if (CheckGraph.countloopsGraph(this)>0)
-    //     //     { 
-    //     //         firsttext = "Giả Đồ Thị";
-    //     //     }
-    //     //     else
-    //     //     {
-    //     //         firsttext = "Đa Đồ Thị";
-    //     //     }
-    //     // }
-    //     // else
-    //     // {
-    //     //     firsttext = "Đơn Đồ Thị";
-    //     // }
-    //     // Console.WriteLine($"\n{firsttext} {Secondtext}");
-    //     foreach (var Connect in Adjacency_list)
-    //     {
-    //         var TextValue = string.Empty;
-    //         for (var i = 0; i < Connect.Value.Length; i++)
-    //             if (i == 0)
-    //                 TextValue = string.Concat(Connect.Value[i]);
-    //             else
-    //                 TextValue += $" {Connect.Value[i]}";
-    //         Console.WriteLine($"Node: {Connect.Key}, Connect to: {TextValue}");
-    //     }
+        //Tong so canh
+        // Console.WriteLine($"Tổng số cạnh đồ thị: {CountConnect(this)}");
+        // //Số cặp cạnh bôi
+        // Console.WriteLine($"Tổng số cặp cạnh bội: {CheckGraph.CountDoubleConnect(this)}");
+        // Console.WriteLine($"Tổng số cạnh khuyên: {CheckGraph.countloopsGraph(this)}");
+        // Console.WriteLine($"Tổng số đỉnh treo: {CheckGraph.CountPendant(this)}");
+        //in so bac moi dinh
+        // switch (this.Undirect)
+        // {
+        //     case true:
+        //         Console.WriteLine("Bac tung dinh:");
+        //         for (int i = 0; i < this.Degrees.Length; i++)
+        //         {
+        //             Console.Write($"{i}({Degrees[i]}) ");
+        //         }
+        //         break;
+        //     case false:
+        //         Console.WriteLine("(Bac vao - Bac ra)Bac tung dinh:");
+        //         for (int i = 0; i < this.n; i++)
+        //         {
+        //             Console.Write($"{i}({DegreesOut[i]}-{Degrees[i]}) ");
+        //         }
+        //         break;
+        // }
+        // //loai do thi:
+        // string firsttext,Secondtext;
+        //
+        // switch (this.Undirect)
+        // {
+        //     case true:
+        //         Secondtext = "Vô Hướng";
+        //         break;
+        //     case false:
+        //         Secondtext = "Có Hướng";
+        //         break;
+        // }
+        // if (CheckGraph.CountDoubleConnect(this)>0)
+        // {
+        //     if (CheckGraph.countloopsGraph(this)>0)
+        //     { 
+        //         firsttext = "Giả Đồ Thị";
+        //     }
+        //     else
+        //     {
+        //         firsttext = "Đa Đồ Thị";
+        //     }
+        // }
+        // else
+        // {
+        //     firsttext = "Đơn Đồ Thị";
+        // }
+        // Console.WriteLine($"\n{firsttext} {Secondtext}");
+        foreach (var Connect in Adjacency_list)
+        {
+            var TextValue = string.Empty;
+            for (var i = 0; i < Connect.Value.Length; i++)
+                if (i == 0)
+                    TextValue = string.Concat(Connect.Value[i]);
+                else
+                    TextValue += $" {Connect.Value[i]}";
+            Console.WriteLine($"Node: {Connect.Key}, Connect to: {TextValue}");
+        }
     }
 }

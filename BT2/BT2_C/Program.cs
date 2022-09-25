@@ -1,3 +1,18 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿namespace BT2_C;
 
-Console.WriteLine("Hello, World!");
+public static class Program
+{
+    public static void Main(string[] args)
+    {
+        var Graph = new AdjacencyMatrix();
+        Console.WriteLine("BT2-Câu a: Xét liên thông và thành phần liên thông " +
+                          "\nFile nhập dữ liệu có:\n - Dòng đầu là số đỉnh," +
+                          "\n - Dòng 2 là cạnh và đích tuy nhiên sẽ không có giá trị vì bài C xét liên thông" +
+                          "\n - Các dòng tiếp theo là ma trận biểu diễn quan hệ kết nối các đỉnh\n");
+        Console.Write("Nhập đường dẫn tuyệt đối (bao gồm file) đến file chứa dữ liệu: ");
+        // var path = Console.ReadLine();
+        Graph.readAdjacencyMatrix("/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT2/BT2_C/Input/VD6.txt");
+        var lienthong = new ConnectedComponent(Graph);
+
+    }
+}
