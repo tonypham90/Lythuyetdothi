@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT2/BT2_A/BT2_A.csproj": {}
+    "/Users/tonypham/Documents/GitHub/Lythuyetdothi/DOAN1/DOAN1/DOAN1.csproj": {}
   },
   "projects": {
-    "/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT2/BT2_A/BT2_A.csproj": {
+    "/Users/tonypham/Documents/GitHub/Lythuyetdothi/DOAN1/DOAN1/DOAN1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT2/BT2_A/BT2_A.csproj",
-        "projectName": "BT2_A",
-        "projectPath": "/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT2/BT2_A/BT2_A.csproj",
+        "projectUniqueName": "/Users/tonypham/Documents/GitHub/Lythuyetdothi/DOAN1/DOAN1/DOAN1.csproj",
+        "projectName": "DOAN1",
+        "projectPath": "/Users/tonypham/Documents/GitHub/Lythuyetdothi/DOAN1/DOAN1/DOAN1.csproj",
         "packagesPath": "/Users/tonypham/.nuget/packages/",
-        "outputPath": "/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT2/BT2_A/obj/",
+        "outputPath": "/Users/tonypham/Documents/GitHub/Lythuyetdothi/DOAN1/DOAN1/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/tonypham/.nuget/NuGet/NuGet.Config"

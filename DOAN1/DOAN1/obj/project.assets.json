@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT2/BT2_C/BT2_C.csproj",
-      "projectName": "BT2_C",
-      "projectPath": "/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT2/BT2_C/BT2_C.csproj",
+      "projectUniqueName": "/Users/tonypham/Documents/GitHub/Lythuyetdothi/DOAN1/DOAN1/DOAN1.csproj",
+      "projectName": "DOAN1",
+      "projectPath": "/Users/tonypham/Documents/GitHub/Lythuyetdothi/DOAN1/DOAN1/DOAN1.csproj",
       "packagesPath": "/Users/tonypham/.nuget/packages/",
-      "outputPath": "/Users/tonypham/Documents/GitHub/Lythuyetdothi/BT2/BT2_C/obj/",
+      "outputPath": "/Users/tonypham/Documents/GitHub/Lythuyetdothi/DOAN1/DOAN1/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/tonypham/.nuget/NuGet/NuGet.Config"
