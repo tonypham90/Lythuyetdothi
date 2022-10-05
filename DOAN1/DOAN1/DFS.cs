@@ -1,4 +1,4 @@
-namespace BT2_A;
+namespace DOAN1;
 public class DFS
 {
     private Dictionary<int, int[]> Adjacency_list;

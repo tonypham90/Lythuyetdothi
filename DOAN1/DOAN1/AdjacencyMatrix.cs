@@ -1,4 +1,4 @@
-namespace BT2_A;
+namespace DOAN1;
 
 public class AdjacencyMatrix
 {
@@ -12,7 +12,7 @@ public class AdjacencyMatrix
     public bool Undirect; //Mo ta vo huong true; co huong: false
 
     //input du lieu va duong dan
-    public void readAdjacencyMatrix(string? pathInput)
+    public void ReadAdjacencyMatrix(string? pathInput)
     {
         var file = new StreamReader(pathInput);
         var input = file.ReadToEnd();
@@ -23,24 +23,54 @@ public class AdjacencyMatrix
             {
                 var parse = int.Parse(result[0]);
                 n = parse;
-                a = new int[parse, parse];
-            }
-
-            else if (i == 1)
-            {
-                var StartGoal = result[i].Split(" ");
-                Start = int.Parse(StartGoal[0]);
-                Goal = int.Parse(StartGoal[1]);
+                Adjacency_list = new Dictionary<int, int[]>();
             }
             else
             {
+                if (result[i].Length==1|| Convert.ToInt32(result[i][0])==0)
+                {
+                    continue;
+                }
                 var line = result[i].Split(" ");
-                for (var j = 0; j < line.Length; j++) a[i - 2, j] = int.Parse(line[j]);
+                int countConnect = int.Parse(line[0]);
+                if (countConnect ==0)
+                {
+                    continue;
+                }
+                else
+                {
+                    int[] connectionlist = new int[countConnect];
+                    for (int j = 1; j < line.Length; j++)
+                    {
+                        connectionlist[j - 1] = int.Parse(line[j]);
+                    }
+
+                    Adjacency_list.Add(i-1,connectionlist);
+                }
             }
+        ConvertAdjacencylistToMatrix();
 
         IsUndirectedGraph();
         countDegrees();
-        ConvertMatrixToAdjacencylist();
+        // ConvertMatrixToAdjacencylist();
+        
+    }
+
+    private void ConvertAdjacencylistToMatrix()
+    {
+        int[,] Matrix = new int[n, n];
+        
+        foreach (var element in Adjacency_list)
+        {
+            int Node = element.Key;
+            int[] Connect = element.Value;
+            for (int i = 0; i < Connect.Length; i++)
+            {
+                Matrix[Node, Connect[i]] = 1;
+            }
+        }
+
+        a = Matrix;
     }
 
     //Convert matrix to Adjacency list

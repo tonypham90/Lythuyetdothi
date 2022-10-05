@@ -1,0 +1,15 @@
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/DOAN1/DOAN1/bin/Debug/net6.0/DOAN1
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/DOAN1/DOAN1/bin/Debug/net6.0/DOAN1.deps.json
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/DOAN1/DOAN1/bin/Debug/net6.0/DOAN1.runtimeconfig.json
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/DOAN1/DOAN1/bin/Debug/net6.0/DOAN1.dll
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/DOAN1/DOAN1/bin/Debug/net6.0/DOAN1.pdb
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/DOAN1/DOAN1/obj/Debug/net6.0/DOAN1.csproj.AssemblyReference.cache
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/DOAN1/DOAN1/obj/Debug/net6.0/DOAN1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/DOAN1/DOAN1/obj/Debug/net6.0/DOAN1.AssemblyInfoInputs.cache
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/DOAN1/DOAN1/obj/Debug/net6.0/DOAN1.AssemblyInfo.cs
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/DOAN1/DOAN1/obj/Debug/net6.0/DOAN1.csproj.CoreCompileInputs.cache
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/DOAN1/DOAN1/obj/Debug/net6.0/DOAN1.dll
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/DOAN1/DOAN1/obj/Debug/net6.0/refint/DOAN1.dll
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/DOAN1/DOAN1/obj/Debug/net6.0/DOAN1.pdb
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/DOAN1/DOAN1/obj/Debug/net6.0/DOAN1.genruntimeconfig.cache
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/DOAN1/DOAN1/obj/Debug/net6.0/ref/DOAN1.dll
