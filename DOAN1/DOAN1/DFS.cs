@@ -1,12 +1,13 @@
 namespace DOAN1;
+
 public class DFS
 {
     private Dictionary<int, int[]> Adjacency_list;
-    private int Goal;
-    private int Start;
     private bool foundGoal; //tim thay dich
+    private int Goal;
     private Dictionary<int, int>? Parentlist;
     private Stack<int[]>? stack;
+    private int Start;
     private List<int>? Visited;
 
 
@@ -22,7 +23,7 @@ public class DFS
         FindGoal(Start, Goal);
         printResult();
     }
-    
+
 
     public void FindGoal(int HeadNode, int Goal)
     {
@@ -145,4 +146,6 @@ public class DFS
 
         Console.WriteLine(TextRoad);
     } // in duong di nguoc tu dich ve dinh
+    
+    public void
 }

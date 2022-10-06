@@ -5,4 +5,6 @@ using DOAN1;
 Console.WriteLine("Hello, World!");
 var Grapinput = new AdjacencyMatrix();
 Grapinput.ReadAdjacencyMatrix("/Users/tonypham/Documents/GitHub/Lythuyetdothi/DOAN1/DOAN1/Input/Input.txt");
-Grapinput.showAdjacencyMatrix();
+Grapinput.ShowAdjacencyMatrix();
+DFS Method = new DFS();
+Method.Import(Grapinput);

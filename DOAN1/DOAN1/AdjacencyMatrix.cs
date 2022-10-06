@@ -27,47 +27,33 @@ public class AdjacencyMatrix
             }
             else
             {
-                if (result[i].Length==1|| Convert.ToInt32(result[i][0])==0)
-                {
-                    continue;
-                }
+                if (result[i].Length == 1 || Convert.ToInt32(result[i][0]) == 0) continue;
                 var line = result[i].Split(" ");
-                int countConnect = int.Parse(line[0]);
-                if (countConnect ==0)
-                {
-                    continue;
-                }
-                else
-                {
-                    int[] connectionlist = new int[countConnect];
-                    for (int j = 1; j < line.Length; j++)
-                    {
-                        connectionlist[j - 1] = int.Parse(line[j]);
-                    }
+                var countConnect = int.Parse(line[0]);
+                if (countConnect == 0) continue;
 
-                    Adjacency_list.Add(i-1,connectionlist);
-                }
+                var connectionlist = new int[countConnect];
+                for (var j = 1; j < line.Length; j++) connectionlist[j - 1] = int.Parse(line[j]);
+
+                Adjacency_list.Add(i - 1, connectionlist);
             }
+
         ConvertAdjacencylistToMatrix();
 
         IsUndirectedGraph();
-        countDegrees();
+        CountDegrees();
         // ConvertMatrixToAdjacencylist();
-        
     }
 
     private void ConvertAdjacencylistToMatrix()
     {
-        int[,] Matrix = new int[n, n];
-        
+        var Matrix = new int[n, n];
+
         foreach (var element in Adjacency_list)
         {
-            int Node = element.Key;
-            int[] Connect = element.Value;
-            for (int i = 0; i < Connect.Length; i++)
-            {
-                Matrix[Node, Connect[i]] = 1;
-            }
+            var Node = element.Key;
+            var Connect = element.Value;
+            foreach (var t in Connect) Matrix[Node, t] = 1;
         }
 
         a = Matrix;
@@ -75,7 +61,7 @@ public class AdjacencyMatrix
 
     //Convert matrix to Adjacency list
 
-    public void ConvertMatrixToAdjacencylist()
+    private void ConvertMatrixToAdjacencylist()
     {
         var dictionary = new Dictionary<int, int[]>();
         Adjacency_list = new Dictionary<int, int[]>();
@@ -102,7 +88,7 @@ public class AdjacencyMatrix
         Adjacency_list = dictionary;
     }
 
-    public void IsUndirectedGraph() //kiem tra tinh co huong cua do thi
+    private void IsUndirectedGraph() //kiem tra tinh co huong cua do thi
     {
         int i, j;
         var isSymmetric = true;
@@ -115,7 +101,7 @@ public class AdjacencyMatrix
         Undirect = isSymmetric;
     }
 
-    public void countDegrees() //Dem dinh
+    private void CountDegrees() //Dem dinh
     {
         var degrees = new int[n]; // Mảng chứa bậc của các đỉnh
         var degreesOuts = new int[n];
@@ -140,8 +126,20 @@ public class AdjacencyMatrix
         DegreesOut = degreesOuts;
     }
 
+    //Print Matrix Graph
+    private void PrintMatrix()
+    {
+        var Matrix = a;
+        for (var i = 0; i < Matrix.GetLength(0); i++)
+        {
+            var row = string.Empty;
+            for (var j = 0; j < Matrix.GetLength(1); j++) row += $"{Matrix[i, j]} ";
+            Console.WriteLine(row);
+        }
+    }
+
     //Show propertive of graph
-    public void showAdjacencyMatrix()
+    public void ShowAdjacencyMatrix()
     {
         //begin
         Console.WriteLine($"Số Đỉnh đồ thị: {n}");
@@ -225,5 +223,6 @@ public class AdjacencyMatrix
                     TextValue += $" {Connect.Value[i]}";
             Console.WriteLine($"Node: {Connect.Key}, Connect to: {TextValue}");
         }
+        PrintMatrix();
     }
 }
