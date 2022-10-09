@@ -2,7 +2,7 @@ namespace DOAN1;
 
 public class AdjacencyMatrix
 {
-    public int[,]? a = new int[0, 0]; //Ma tran bieu dien do thi
+    public int[,] a = new int[0, 0]; //Ma tran bieu dien do thi
     public Dictionary<int, int[]> Adjacency_list;
     public int[] Degrees; //Bậc hay bậc vào của Đỉnh
     public int[] DegreesOut; // Bậc ra của đỉnh bao gồm 
@@ -12,7 +12,7 @@ public class AdjacencyMatrix
     public bool Undirect; //Mo ta vo huong true; co huong: false
 
     //input du lieu va duong dan
-    public void ReadAdjacencyMatrix(string? pathInput)
+    public void ReadNeiborNodefile(string? pathInput)
     {
         var file = new StreamReader(pathInput);
         var input = file.ReadToEnd();
@@ -45,6 +45,62 @@ public class AdjacencyMatrix
         // ConvertMatrixToAdjacencylist();
     }
 
+    public void readAdjacencyMatrix(string? pathInput)
+    {
+        var file = new StreamReader(pathInput);
+        var input = file.ReadToEnd();
+        // Console.WriteLine(input);
+        var result = input.Split("\n");
+        for (var i = 0; i < result.Length; i++)
+            if (i == 0)
+            {
+                var parse = int.Parse(result[0]);
+                n = parse;
+                a = new int[parse, parse];
+            }
+
+            else if (i == 1)
+            {
+                var StartGoal = result[i].Split(" ");
+                Start = int.Parse(StartGoal[0]);
+                Goal = int.Parse(StartGoal[1]);
+            }
+            else
+            {
+                var line = result[i].Split(" ");
+                for (var j = 0; j < line.Length; j++) a[i - 2, j] = int.Parse(line[j]);
+            }
+
+        IsUndirectedGraph();
+        countDegrees();
+        ConvertMatrixToAdjacencylist();
+    }
+
+    public void countDegrees() //Dem dinh
+    {
+        var degrees = new int[n]; // Mảng chứa bậc của các đỉnh
+        var degreesOuts = new int[n];
+        for (var i = 0; i < n; i++) degreesOuts[i] = 0;
+
+        for (var i = 0; i < n; i++)
+        {
+            var count = 0;
+            for (var j = 0; j < n; j++)
+                if (a[i, j] != 0)
+                {
+                    count += a[i, j];
+                    degreesOuts[j] += a[i, j];
+                    if (i == j && Undirect) // xet truong hop canh khuyen
+                        count += a[i, i];
+                }
+
+            degrees[i] = count;
+        }
+
+        Degrees = degrees;
+        DegreesOut = degreesOuts;
+    }
+
     private void ConvertAdjacencylistToMatrix()
     {
         var Matrix = new int[n, n];
@@ -61,7 +117,7 @@ public class AdjacencyMatrix
 
     //Convert matrix to Adjacency list
 
-    private void ConvertMatrixToAdjacencylist()
+    public void ConvertMatrixToAdjacencylist()
     {
         var dictionary = new Dictionary<int, int[]>();
         Adjacency_list = new Dictionary<int, int[]>();
@@ -88,7 +144,7 @@ public class AdjacencyMatrix
         Adjacency_list = dictionary;
     }
 
-    private void IsUndirectedGraph() //kiem tra tinh co huong cua do thi
+    public void IsUndirectedGraph() //kiem tra tinh co huong cua do thi
     {
         int i, j;
         var isSymmetric = true;
@@ -223,6 +279,31 @@ public class AdjacencyMatrix
                     TextValue += $" {Connect.Value[i]}";
             Console.WriteLine($"Node: {Connect.Key}, Connect to: {TextValue}");
         }
+
         PrintMatrix();
+    }
+
+    public AdjacencyMatrix convertdirecttoUndirect()
+    {
+        AdjacencyMatrix GraphConvert = new AdjacencyMatrix();
+        int[,] newMatrix = new int[n, n];
+        for (int i = 0; i < a.GetLength(0); i++)
+        {
+            for (int j = 0; j < a.GetLength(1); j++)
+            {
+                if (a[i,j]==1)
+                {
+                    newMatrix[i, j] = 1;
+                    newMatrix[j, i] = 1;
+                }
+            }
+        }
+        GraphConvert.a = newMatrix;
+        GraphConvert.n = n;
+        GraphConvert.Goal = Goal;
+        GraphConvert.ConvertMatrixToAdjacencylist();
+        GraphConvert.IsUndirectedGraph();
+        
+        return GraphConvert;
     }
 }

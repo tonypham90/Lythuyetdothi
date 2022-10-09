@@ -8,8 +8,14 @@ public class DFS
     private Dictionary<int, int>? Parentlist;
     private Stack<int[]>? stack;
     private int Start;
-    private List<int>? Visited;
 
+    public DFS(AdjacencyMatrix g)
+    {
+        Import(g);
+    }
+
+    // public void
+    public List<int>? VisitedList { get; set; }
 
     public void Import(AdjacencyMatrix g)
     {
@@ -18,16 +24,16 @@ public class DFS
         Adjacency_list = g.Adjacency_list;
     }
 
-    public void Run()
-    {
-        FindGoal(Start, Goal);
-        printResult();
-    }
+    // public void Run()
+    // {
+    //     FindGoal(Start, Goal);
+    //     // printResult();
+    // }
 
 
-    public void FindGoal(int HeadNode, int Goal)
+    public bool IsFoundGoal(int HeadNode, int Goal)
     {
-        Visited = new List<int>();
+        VisitedList = new List<int>();
         stack = new Stack<int[]>();
         Parentlist = new Dictionary<int, int>();
         foundGoal = false;
@@ -46,10 +52,10 @@ public class DFS
             {
                 if (Adjacency_list.ContainsKey(currentNode))
                 {
-                    if (Visited.Contains(currentNode))
+                    if (VisitedList.Contains(currentNode))
                         continue;
 
-                    Visited.Add(currentNode);
+                    VisitedList.Add(currentNode);
                     if (Parentlist.ContainsKey(currentNode)) Parentlist.Remove(currentNode);
 
                     Parentlist.Add(currentNode, elementofStack[1]);
@@ -80,7 +86,7 @@ public class DFS
                 }
                 else
                 {
-                    if (Visited.Contains(currentNode))
+                    if (VisitedList.Contains(currentNode))
                         // if (Parentlist.ContainsKey(currentNode))
                         // {
                         //     Parentlist.Remove(currentNode);
@@ -89,25 +95,50 @@ public class DFS
                         // Parentlist.Add(currentNode, elementofStack[1]);
                         continue;
 
-                    Visited.Add(currentNode);
+                    VisitedList.Add(currentNode);
                 }
             }
             else
             {
                 foundGoal = true;
-                Visited.Add(currentNode);
+                VisitedList.Add(currentNode);
                 Parentlist.Add(currentNode, elementofStack[1]);
                 break;
             }
         }
 
-
         // printResult(int? parrent)
         // {
         //     Parrent = parrent;
         // }
+        return foundGoal;
     }
 
+    public int[] findConnectComponent(int SurveyNode)
+    {
+        var Component = new List<int>();
+        var Waitinglist = new Stack<int>();
+        var Visitedlist = new List<int>();
+
+        if (!Adjacency_list.ContainsKey(SurveyNode))
+            return new[] {
+                SurveyNode
+            };
+        //Check list child available
+        Waitinglist.Push(SurveyNode);
+        while (Waitinglist.Count != 0)
+        {
+            var headnode = Waitinglist.Pop();
+            Visitedlist.Add(headnode);
+            var childrentlist = Adjacency_list[headnode];
+            foreach (var child in childrentlist)
+                if (IsFoundGoal(child, SurveyNode) && !Visitedlist.Contains(child))
+                    Waitinglist.Push(child);
+            Component.Add(headnode);
+        }
+
+        return Component.ToArray();
+    }
 
     private void printResult() //in ket qua duyet tim kiem
     {
@@ -115,7 +146,7 @@ public class DFS
         {
             case true:
                 Console.WriteLine("Danh sách các đỉnh đã duyệt:");
-                for (var i = 0; i < Visited.Count; i++) Console.Write($" {Visited[i]}");
+                for (var i = 0; i < VisitedList.Count; i++) Console.Write($" {VisitedList[i]}");
                 Console.WriteLine("\nĐường đi in ngược");
                 printGoaltoStart();
                 break;
@@ -146,6 +177,85 @@ public class DFS
 
         Console.WriteLine(TextRoad);
     } // in duong di nguoc tu dich ve dinh
-    
-    public void
+
+    public void NewHead(int HeadNode)
+    {
+        Start = HeadNode;
+        Run();
+    }
+
+    public void Run()
+    {
+        FindGoal(Start);
+        // printResult();
+    }
+
+
+    public void FindGoal(int HeadNode)
+    {
+        VisitedList = new List<int>();
+        stack = new Stack<int[]>();
+        Parentlist = new Dictionary<int, int>();
+        foundGoal = false;
+        var elementofStack = new int[2];
+        elementofStack[0] = HeadNode;
+        elementofStack[1] = HeadNode; //Start is current and parent is same.
+        stack.Push(elementofStack);
+        // stack.Push(Start);
+        while (stack.Count != 0)
+        {
+            elementofStack = stack.Pop();
+            //Check goal
+            var currentNode = elementofStack[0];
+            if (Adjacency_list.ContainsKey(currentNode))
+            {
+                if (VisitedList.Contains(currentNode))
+                    continue;
+
+                VisitedList.Add(currentNode);
+                if (Parentlist.ContainsKey(currentNode)) Parentlist.Remove(currentNode);
+
+                Parentlist.Add(currentNode, elementofStack[1]);
+                var listchild = Adjacency_list[currentNode];
+                // var revertlist = Adjacency_list[currentNode];
+                // Console.WriteLine("Original list");
+                // for (int i = 0; i < listchild.Length; i++)
+                // {
+                //     
+                //     Console.Write(listchild[i]+" ");
+                // }
+                Array.Sort(listchild);
+                Array.Reverse(listchild);
+                // Console.WriteLine("Reverse list");
+                // for (int i = 0; i < listchild.Length; i++)
+                // {
+                //     
+                //     Console.Write(listchild[i]+" ");
+                // }
+                for (var i = 0; i < listchild.Length; i++)
+                {
+                    int[] newElement = {
+                        listchild[i], currentNode
+                    };
+                    stack.Push(newElement);
+                }
+            }
+            else
+            {
+                if (VisitedList.Contains(currentNode))
+                    // if (Parentlist.ContainsKey(currentNode))
+                    // {
+                    //     Parentlist.Remove(currentNode);
+                    // }
+                    //
+                    // Parentlist.Add(currentNode, elementofStack[1]);
+                    continue;
+                VisitedList.Add(currentNode);
+            }
+        }
+        // printResult(int? parrent)
+        // {
+        //     Parrent = parrent;
+        // }
+    }
 }
