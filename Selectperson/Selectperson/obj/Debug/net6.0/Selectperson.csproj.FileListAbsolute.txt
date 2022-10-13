@@ -1,0 +1,15 @@
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/Selectperson/Selectperson/bin/Debug/net6.0/Selectperson
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/Selectperson/Selectperson/bin/Debug/net6.0/Selectperson.deps.json
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/Selectperson/Selectperson/bin/Debug/net6.0/Selectperson.runtimeconfig.json
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/Selectperson/Selectperson/bin/Debug/net6.0/Selectperson.dll
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/Selectperson/Selectperson/bin/Debug/net6.0/Selectperson.pdb
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/Selectperson/Selectperson/obj/Debug/net6.0/Selectperson.csproj.AssemblyReference.cache
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/Selectperson/Selectperson/obj/Debug/net6.0/Selectperson.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/Selectperson/Selectperson/obj/Debug/net6.0/Selectperson.AssemblyInfoInputs.cache
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/Selectperson/Selectperson/obj/Debug/net6.0/Selectperson.AssemblyInfo.cs
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/Selectperson/Selectperson/obj/Debug/net6.0/Selectperson.csproj.CoreCompileInputs.cache
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/Selectperson/Selectperson/obj/Debug/net6.0/Selectperson.dll
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/Selectperson/Selectperson/obj/Debug/net6.0/refint/Selectperson.dll
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/Selectperson/Selectperson/obj/Debug/net6.0/Selectperson.pdb
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/Selectperson/Selectperson/obj/Debug/net6.0/Selectperson.genruntimeconfig.cache
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/Selectperson/Selectperson/obj/Debug/net6.0/ref/Selectperson.dll
