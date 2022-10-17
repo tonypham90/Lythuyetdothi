@@ -1,0 +1,15 @@
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan3/BTTuan3/bin/Debug/net6.0/BTTuan3
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan3/BTTuan3/bin/Debug/net6.0/BTTuan3.deps.json
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan3/BTTuan3/bin/Debug/net6.0/BTTuan3.runtimeconfig.json
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan3/BTTuan3/bin/Debug/net6.0/BTTuan3.dll
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan3/BTTuan3/bin/Debug/net6.0/BTTuan3.pdb
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan3/BTTuan3/obj/Debug/net6.0/BTTuan3.csproj.AssemblyReference.cache
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan3/BTTuan3/obj/Debug/net6.0/BTTuan3.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan3/BTTuan3/obj/Debug/net6.0/BTTuan3.AssemblyInfoInputs.cache
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan3/BTTuan3/obj/Debug/net6.0/BTTuan3.AssemblyInfo.cs
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan3/BTTuan3/obj/Debug/net6.0/BTTuan3.csproj.CoreCompileInputs.cache
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan3/BTTuan3/obj/Debug/net6.0/BTTuan3.dll
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan3/BTTuan3/obj/Debug/net6.0/refint/BTTuan3.dll
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan3/BTTuan3/obj/Debug/net6.0/BTTuan3.pdb
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan3/BTTuan3/obj/Debug/net6.0/BTTuan3.genruntimeconfig.cache
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan3/BTTuan3/obj/Debug/net6.0/ref/BTTuan3.dll
