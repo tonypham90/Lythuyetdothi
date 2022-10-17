@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTTuan3", "BTTuan3\BTTuan3.csproj", "{CFDB81C2-9504-479A-BB4E-F0606FE319FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cau_a", "Cau_a", "{1E1E485C-C28D-4BF3-B199-ED594BC7BF29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BT3a", "BT3a\BT3a.csproj", "{FBE4B35D-01AC-4FFE-858A-F66D5224434A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cau_b", "Cau_b", "{7FF42E3E-0489-43FF-82AD-CA813DF1B93F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BT3b", "BT3b\BT3b.csproj", "{8E52104E-1759-40CF-A828-66B86F69B770}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFDB81C2-9504-479A-BB4E-F0606FE319FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFDB81C2-9504-479A-BB4E-F0606FE319FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFDB81C2-9504-479A-BB4E-F0606FE319FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFDB81C2-9504-479A-BB4E-F0606FE319FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBE4B35D-01AC-4FFE-858A-F66D5224434A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBE4B35D-01AC-4FFE-858A-F66D5224434A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBE4B35D-01AC-4FFE-858A-F66D5224434A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBE4B35D-01AC-4FFE-858A-F66D5224434A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E52104E-1759-40CF-A828-66B86F69B770}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E52104E-1759-40CF-A828-66B86F69B770}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E52104E-1759-40CF-A828-66B86F69B770}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E52104E-1759-40CF-A828-66B86F69B770}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FBE4B35D-01AC-4FFE-858A-F66D5224434A} = {1E1E485C-C28D-4BF3-B199-ED594BC7BF29}
+		{8E52104E-1759-40CF-A828-66B86F69B770} = {7FF42E3E-0489-43FF-82AD-CA813DF1B93F}
+	EndGlobalSection
+EndGlobal
