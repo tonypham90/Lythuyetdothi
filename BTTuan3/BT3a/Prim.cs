@@ -66,7 +66,7 @@ public class Prim
 
         }
         Console.WriteLine("Prim");
-        Console.WriteLine("Tập cạnh cây khung nhỏ nhất");
+        Console.WriteLine("Danh Sách canh cây khung nhỏ nhất");
         AdjacencyMatrix.showEDGElist(T);
         MST = EDGE.MSTCaculation(T);
         Console.WriteLine($"Trong so cua cay khung: {MST}");
