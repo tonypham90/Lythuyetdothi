@@ -65,7 +65,8 @@ public class Prim
             graphEdge = ArrayManipulation.RemoveEdges(graphEdge, serveyEdges[0]);
 
         }
-        Console.WriteLine("Cay khung nho nhat phuong phap Prim");
+        Console.WriteLine("Prim");
+        Console.WriteLine("Tập cạnh cây khung nhỏ nhất");
         AdjacencyMatrix.showEDGElist(T);
         MST = EDGE.MSTCaculation(T);
         Console.WriteLine($"Trong so cua cay khung: {MST}");

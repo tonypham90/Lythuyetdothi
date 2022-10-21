@@ -30,9 +30,10 @@ public class Kruskal
             Union(serveyEdge);
         }
         Console.WriteLine("Krukal");
+        Console.WriteLine("Tập cạnh cây khung nhỏ nhất");
         AdjacencyMatrix.showEDGElist(T);
         var totalweight = ArrayManipulation.TotalWeightEdges(T);
-        Console.WriteLine($"Tong so cay khung {totalweight}");
+        Console.WriteLine($"Tổng trọng số cây khung {totalweight}");
         
 
     }
