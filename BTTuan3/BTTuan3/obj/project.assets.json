@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/Users/tonypham/.nuget/packages/": {}
+    "C:\\Users\\AnhPT2\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan3/BTTuan3/BTTuan3.csproj",
+      "projectUniqueName": "D:\\Users\\AnhPT2\\Documents\\GitHub\\Lythuyetdothi\\BTTuan3\\BTTuan3\\BTTuan3.csproj",
       "projectName": "BTTuan3",
-      "projectPath": "/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan3/BTTuan3/BTTuan3.csproj",
-      "packagesPath": "/Users/tonypham/.nuget/packages/",
-      "outputPath": "/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan3/BTTuan3/obj/",
+      "projectPath": "D:\\Users\\AnhPT2\\Documents\\GitHub\\Lythuyetdothi\\BTTuan3\\BTTuan3\\BTTuan3.csproj",
+      "packagesPath": "C:\\Users\\AnhPT2\\.nuget\\packages\\",
+      "outputPath": "D:\\Users\\AnhPT2\\Documents\\GitHub\\Lythuyetdothi\\BTTuan3\\BTTuan3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/tonypham/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\AnhPT2\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.401/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\AnhPT2\\.dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\AnhPT2\\Documents\\GitHub\\Lythuyetdothi\\BTTuan3\\BTTuan3\\BTTuan3.csproj": {}
+    "D:\\Users\\AnhPT2\\Documents\\GitHub\\Lythuyetdothi\\BTTuan4\\BTT4\\Cau1\\Cau1.csproj": {}
   },
   "projects": {
-    "D:\\Users\\AnhPT2\\Documents\\GitHub\\Lythuyetdothi\\BTTuan3\\BTTuan3\\BTTuan3.csproj": {
+    "D:\\Users\\AnhPT2\\Documents\\GitHub\\Lythuyetdothi\\BTTuan4\\BTT4\\Cau1\\Cau1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\AnhPT2\\Documents\\GitHub\\Lythuyetdothi\\BTTuan3\\BTTuan3\\BTTuan3.csproj",
-        "projectName": "BTTuan3",
-        "projectPath": "D:\\Users\\AnhPT2\\Documents\\GitHub\\Lythuyetdothi\\BTTuan3\\BTTuan3\\BTTuan3.csproj",
+        "projectUniqueName": "D:\\Users\\AnhPT2\\Documents\\GitHub\\Lythuyetdothi\\BTTuan4\\BTT4\\Cau1\\Cau1.csproj",
+        "projectName": "Cau1",
+        "projectPath": "D:\\Users\\AnhPT2\\Documents\\GitHub\\Lythuyetdothi\\BTTuan4\\BTT4\\Cau1\\Cau1.csproj",
         "packagesPath": "C:\\Users\\AnhPT2\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\AnhPT2\\Documents\\GitHub\\Lythuyetdothi\\BTTuan3\\BTTuan3\\obj\\",
+        "outputPath": "D:\\Users\\AnhPT2\\Documents\\GitHub\\Lythuyetdothi\\BTTuan4\\BTT4\\Cau1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\AnhPT2\\AppData\\Roaming\\NuGet\\NuGet.Config"
