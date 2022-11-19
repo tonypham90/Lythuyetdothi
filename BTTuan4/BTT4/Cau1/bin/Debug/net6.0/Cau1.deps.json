@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Cau1/1.0.0": {
+        "dependencies": {
+          "BTT4": "1.0.0"
+        },
+        "runtime": {
+          "Cau1.dll": {}
+        }
+      },
+      "BTT4/1.0.0": {
+        "runtime": {
+          "BTT4.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Cau1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BTT4/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

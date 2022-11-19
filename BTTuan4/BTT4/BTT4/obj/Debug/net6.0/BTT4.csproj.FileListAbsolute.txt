@@ -1,0 +1,15 @@
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan4/BTT4/BTT4/bin/Debug/net6.0/BTT4
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan4/BTT4/BTT4/bin/Debug/net6.0/BTT4.deps.json
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan4/BTT4/BTT4/bin/Debug/net6.0/BTT4.runtimeconfig.json
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan4/BTT4/BTT4/bin/Debug/net6.0/BTT4.dll
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan4/BTT4/BTT4/bin/Debug/net6.0/BTT4.pdb
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan4/BTT4/BTT4/obj/Debug/net6.0/BTT4.csproj.AssemblyReference.cache
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan4/BTT4/BTT4/obj/Debug/net6.0/BTT4.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan4/BTT4/BTT4/obj/Debug/net6.0/BTT4.AssemblyInfoInputs.cache
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan4/BTT4/BTT4/obj/Debug/net6.0/BTT4.AssemblyInfo.cs
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan4/BTT4/BTT4/obj/Debug/net6.0/BTT4.csproj.CoreCompileInputs.cache
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan4/BTT4/BTT4/obj/Debug/net6.0/BTT4.dll
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan4/BTT4/BTT4/obj/Debug/net6.0/refint/BTT4.dll
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan4/BTT4/BTT4/obj/Debug/net6.0/BTT4.pdb
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan4/BTT4/BTT4/obj/Debug/net6.0/BTT4.genruntimeconfig.cache
+/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan4/BTT4/BTT4/obj/Debug/net6.0/ref/BTT4.dll

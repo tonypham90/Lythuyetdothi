@@ -45,7 +45,17 @@ public class AdjacencyMatrix
         switch (Undirect)
         {
             case false:
-                Console.WriteLine("Convert qua canh chi ap dung cho do thi vo huong");
+                for (int i = 0; i < a.GetLength(0); i++)
+                {
+                    for (int j = 0; j < a.GetLength(1); j++)
+                    {
+                        if (a[i,j]!=0)
+                        {
+                            EDGE edge = new EDGE(i, j, a[i, j]);
+                            importEdges.Add(edge);
+                        }
+                    }
+                }
                 break;
             case true:
                 for (int i = 0; i < a.GetLength(0); i++)

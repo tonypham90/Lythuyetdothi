@@ -1,8 +1,8 @@
 namespace BTT4;
 
-public class Sort
+public class MergeSortEdges
 {
-    public static EDGE[] MergeSortEdges(EDGE[] array)
+    public static EDGE[] Sort(EDGE[] array)
     {
         EDGE[] left;
         EDGE[] right;
@@ -36,9 +36,9 @@ public class Sort
         }
 
         //Recursively sort the left array
-        left = MergeSortEdges(left);
+        left = Sort(left);
         //Recursively sort the right array
-        right = MergeSortEdges(right);
+        right = Sort(right);
         //Merge our two sorted arrays
         result = Merge(left, right);
         return result;

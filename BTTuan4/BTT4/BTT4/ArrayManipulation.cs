@@ -18,6 +18,17 @@ public class ArrayManipulation
         return result.ToArray();
     }
 
+    public static EDGE[] AddEdges(EDGE[] listEdge, EDGE edgeAdd)
+    {
+        var newlistEdges = new EDGE[listEdge.Length + 1];
+        for (int i = 0; i < listEdge.Length; i++)
+        {
+            newlistEdges[i] = listEdge[i];
+        }
+        newlistEdges[listEdge.Length] = edgeAdd;
+        return newlistEdges;
+    }
+
     public static int TotalWeightEdges(EDGE[] listEdges)
     {
         int total = 0;
@@ -47,5 +58,30 @@ public class ArrayManipulation
     public static int CountValueArray(int[] Array, int value)
     {
         return Array.Count(element => element == value);
+    }
+
+    public static int[] road(int[] roadrecord, int[] parrentlist, int i)
+    {
+        while (true)
+        {
+            if (i == parrentlist[i])
+            {
+                roadrecord = Addelement(roadrecord, i);
+                return roadrecord;
+            }
+            roadrecord = Addelement(roadrecord, i);
+            i = parrentlist[i];
+        }
+    }
+
+    public static int[] Addelement(int[] currentArray,int newelement)
+    {
+        var newlistEdges = new int[currentArray.Length + 1];
+        for (int i = 0; i < currentArray.Length; i++)
+        {
+            newlistEdges[i] = currentArray[i];
+        }
+        newlistEdges[currentArray.Length] = newelement;
+        return newlistEdges;
     }
 }

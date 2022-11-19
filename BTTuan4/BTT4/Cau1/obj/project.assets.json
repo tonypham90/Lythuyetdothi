@@ -1,26 +1,45 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "BTT4/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/BTT4.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BTT4.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "BTT4/1.0.0": {
+      "type": "project",
+      "path": "../BTT4/BTT4.csproj",
+      "msbuildProject": "../BTT4/BTT4.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "BTT4 >= 1.0.0"
+    ]
   },
   "packageFolders": {
-    "C:\\Users\\AnhPT2\\.nuget\\packages\\": {}
+    "/Users/tonypham/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Users\\AnhPT2\\Documents\\GitHub\\Lythuyetdothi\\BTTuan4\\BTT4\\Cau1\\Cau1.csproj",
+      "projectUniqueName": "/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan4/BTT4/Cau1/Cau1.csproj",
       "projectName": "Cau1",
-      "projectPath": "D:\\Users\\AnhPT2\\Documents\\GitHub\\Lythuyetdothi\\BTTuan4\\BTT4\\Cau1\\Cau1.csproj",
-      "packagesPath": "C:\\Users\\AnhPT2\\.nuget\\packages\\",
-      "outputPath": "D:\\Users\\AnhPT2\\Documents\\GitHub\\Lythuyetdothi\\BTTuan4\\BTT4\\Cau1\\obj\\",
+      "projectPath": "/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan4/BTT4/Cau1/Cau1.csproj",
+      "packagesPath": "/Users/tonypham/.nuget/packages/",
+      "outputPath": "/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan4/BTT4/Cau1/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\AnhPT2\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/tonypham/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -31,7 +50,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan4/BTT4/BTT4/BTT4.csproj": {
+              "projectPath": "/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan4/BTT4/BTT4/BTT4.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -59,7 +82,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\AnhPT2\\.dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
       }
     }
   }
