@@ -15,7 +15,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\BTTuan3\BTTuan3.csproj" />
+        <ProjectReference Include="..\BTTuan3\BTTuan3.csproj"/>
     </ItemGroup>
 
 </Project>

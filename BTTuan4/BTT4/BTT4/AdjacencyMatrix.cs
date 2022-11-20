@@ -29,14 +29,9 @@ public class AdjacencyMatrix
 
     public static void showEDGElist(EDGE[] listEdges)
     {
-        foreach (EDGE edge in listEdges)
-        {
-            if (edge!=null)
-            {
+        foreach (var edge in listEdges)
+            if (edge != null)
                 Console.WriteLine($"Canh:{edge.Vertex()[0]}-{edge.Vertex()[1]}:{edge.EdgeWeight()}");
-            }
-            
-        }
     }
 
     private void ConvertMatrixtoEDGE()
@@ -45,30 +40,24 @@ public class AdjacencyMatrix
         switch (Undirect)
         {
             case false:
-                for (int i = 0; i < a.GetLength(0); i++)
-                {
-                    for (int j = 0; j < a.GetLength(1); j++)
+                for (var i = 0; i < a.GetLength(0); i++)
+                for (var j = 0; j < a.GetLength(1); j++)
+                    if (a[i, j] != 0)
                     {
-                        if (a[i,j]!=0)
-                        {
-                            EDGE edge = new EDGE(i, j, a[i, j]);
-                            importEdges.Add(edge);
-                        }
+                        var edge = new EDGE(i, j, a[i, j]);
+                        importEdges.Add(edge);
                     }
-                }
+
                 break;
             case true:
-                for (int i = 0; i < a.GetLength(0); i++)
-                {
-                    for (int j = 0; j < a.GetLength(1); j++)
+                for (var i = 0; i < a.GetLength(0); i++)
+                for (var j = 0; j < a.GetLength(1); j++)
+                    if (a[i, j] != 0)
                     {
-                        if (a[i,j]!=0)
-                        {
-                            EDGE edge = new EDGE(i, j, a[i, j]);
-                            importEdges.Add(edge);
-                        }
+                        var edge = new EDGE(i, j, a[i, j]);
+                        importEdges.Add(edge);
                     }
-                }
+
                 break;
         }
 

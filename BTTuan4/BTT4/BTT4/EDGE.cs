@@ -25,6 +25,7 @@ public class EDGE
     {
         return weight;
     }
+
     public static int MSTCaculation(EDGE[] edges)
     {
         return edges.Sum(edge => edge.EdgeWeight());
