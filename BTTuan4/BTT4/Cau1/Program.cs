@@ -3,8 +3,8 @@
 using BTT4;
 using Cau1;
 
-Console.WriteLine("Hello, World!");
-var path = "/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan4/BTT4/BTT4/DataSample/vd1-2.txt";
+Console.WriteLine("Vui lòng nhập đường dẫn đến file input:");
+var path = Console.ReadLine();
 var Graph = new AdjacencyMatrix(path);
 var dijkstra = new Dijkstra(Graph);
 Console.WriteLine("done");

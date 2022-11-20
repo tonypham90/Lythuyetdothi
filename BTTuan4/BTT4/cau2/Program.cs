@@ -3,7 +3,7 @@
 using BTT4;
 using Cau2;
 
-Console.WriteLine("Hello, World!");
-var path = "/Users/tonypham/Documents/GitHub/Lythuyetdothi/BTTuan4/BTT4/BTT4/DataSample/vd2-1.txt";
+Console.WriteLine("Vui lòng nhập đường dẫn đến file input:");
+var path = Console.ReadLine();
 var Graph = new AdjacencyMatrix(path);
 var bellmanFord = new Bellman_Ford(Graph);
